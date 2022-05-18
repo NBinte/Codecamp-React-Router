@@ -27,10 +27,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route
+          {/* <Route
             path="/profile"
             element={login ? <Profile /> : <Navigate to="/" />}
-          />
+          /> */}
+          <Route path="/profile" element={<Profile login={login} />} />
           <Route path="/post/:id" element={<Post />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
