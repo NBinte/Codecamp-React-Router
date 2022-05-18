@@ -7,6 +7,8 @@ import Home from "./Pages/Home";
 import NotFound from "./Pages/NotFound";
 import Post from "./Pages/Post";
 import Profile from "./Pages/Profile";
+import ViewProfile from "./Pages/ViewProfile";
+import EditProfile from "./Pages/EditProfile";
 
 function App() {
   const [login, setlogin] = useState(false);
@@ -31,7 +33,11 @@ function App() {
             path="/profile"
             element={login ? <Profile /> : <Navigate to="/" />}
           /> */}
-          <Route path="/profile" element={<Profile login={login} />} />
+          <Route path="/profile" element={<Profile login={login} />}>
+            <Route path="viewprofile" element={<ViewProfile />} />
+            <Route path="editprofile" element={<EditProfile />} />
+          </Route>
+
           <Route path="/post/:id" element={<Post />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
