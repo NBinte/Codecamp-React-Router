@@ -1,14 +1,9 @@
 import React from "react";
 import { useEffect } from "react";
-import { Routes, Route, useNavigate, Link, useMatch } from "react-router-dom";
-import EditProfile from "./EditProfile";
-import NotFound from "./NotFound";
-import ViewProfile from "./ViewProfile";
+import { useNavigate, Link, Outlet } from "react-router-dom";
 
 const Profile = ({ login }) => {
   const navigate = useNavigate();
-
-  const { path, url } = useMatch();
 
   useEffect(() => {
     window.scroll(0, 0);
@@ -23,12 +18,14 @@ const Profile = ({ login }) => {
 
       <ul className="nav">
         <li>
-          <Link to={`${url}/viewprofile`}>View profile</Link>
+          <Link to="viewprofile">View profile</Link>
         </li>
         <li>
-          <Link to={`${url}/editprofile`}>Edit profile</Link>
+          <Link to="editprofile">Edit profile</Link>
         </li>
       </ul>
+
+      <Outlet />
     </>
   );
 };

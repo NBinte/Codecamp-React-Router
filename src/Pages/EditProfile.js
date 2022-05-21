@@ -3,7 +3,7 @@ import React from "react";
 const EditProfile = () => {
   return (
     <>
-      <h2> View Profile Page </h2>
+      <h2> Edit Profile Page </h2>
     </>
   );
 };
